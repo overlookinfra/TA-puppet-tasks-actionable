@@ -7,10 +7,16 @@
 
 ### - Installation Steps
 ----
-- First generate a token from Puppet Enterprise in the shell. Make sure to take into account how long you have the token generated. We recommend to at least set it too 12 Months. We will be putting this in the Add-on Menu to help you alert when it about to expire. 
+- First generate a token from Puppet Enterprise in the shell. Make sure to take into account how long you have the token generated. We recommend to at least set it too 12 Months. 
 ```
 curl -k -X POST -H 'Content-Type: application/json' -d '{"login": "", "password": "","lifetime": "9y" }' https://$:4433/rbac-api/v1/auth/token
 ```
+
+### VictorOps API Token Setup
+---
+
+[VictorOps Setups for Puppet Tasks](https://help.victorops.com/knowledge-base/victorops-puppet-tasks-integration/)
+
 
 ### Version History 
 ----
