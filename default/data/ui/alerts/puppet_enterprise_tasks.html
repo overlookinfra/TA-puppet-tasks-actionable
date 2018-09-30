@@ -1,0 +1,50 @@
+<form class="form-horizontal form-complex">
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_severity">Severity <span class="required">*</span> </label>
+    <div class="controls">
+<select name="action.puppet_enterprise_tasks.param.severity" id="puppet_enterprise_tasks_severity">
+        <option value="CRITICAL">CRITICAL</option>
+        <option value="INFO">INFO</option>
+        <option value="ACKNOWLEDGEMENT">ACKNOWLEDGEMENT</option>
+</select>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_host">Node <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.puppet_enterprise_tasks.param.host" id="puppet_enterprise_tasks_host"/>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_environment">Environment <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.puppet_enterprise_tasks.param.environment" id="puppet_enterprise_tasks_environment"/>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_module">Task <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.puppet_enterprise_tasks.param.module" id="puppet_enterprise_tasks_module"/>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_parameters">Parameters  </label>
+    <div class="controls">
+	<input type="text" name="action.puppet_enterprise_tasks.param.parameters" id="puppet_enterprise_tasks_parameters"/>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="puppet_enterprise_tasks_description">Description <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.puppet_enterprise_tasks.param.description" id="puppet_enterprise_tasks_description"/>
+    </div>
+</div>
+<div class="control-group">
+    <div class="controls">
+		<label class="checkbox" for="puppet_enterprise_tasks_noop">
+			<input type="checkbox" name="action.puppet_enterprise_tasks.param.noop" id="puppet_enterprise_tasks_noop"/>
+		Noop
+		</label>
+    </div>
+</div>
+</form>
