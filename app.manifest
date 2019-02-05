@@ -5,17 +5,17 @@
     "id": {
       "group": null,
       "name": "TA-puppet-tasks-actionable",
-      "version": "1.0"
+      "version": "1.0.2"
     },
     "author": [
       {
-        "name": "Domnick Eger",
+        "name": "Puppet, Inc.",
         "email": null,
         "company": null
       }
     ],
     "releaseDate": null,
-    "description": "Splunk Integration for Puppet Enterprise Tasks",
+    "description": "Enable Splunk to run tasks through Puppet Enterprise in response to an alert event.",
     "classification": {
       "intendedAudience": null,
       "categories": [],

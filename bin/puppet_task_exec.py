@@ -1,7 +1,7 @@
 
 # encoding = utf-8
 # Always put this line at the beginning of this file
-import ta_puppet_tasks_actionable_alerts_for_splunk_action_declare
+import ta_puppet_tasks_actionable_declare
 
 import os
 import sys
@@ -53,5 +53,5 @@ class AlertActionWorkerpuppet_task_exec(ModularAlertBase):
         return status
 
 if __name__ == "__main__":
-    exitcode = AlertActionWorkerpuppet_task_exec("TA-puppet-tasks-actionable-alerts-for-splunk-action", "puppet_task_exec").run(sys.argv)
+    exitcode = AlertActionWorkerpuppet_task_exec("TA-puppet-tasks-actionable", "puppet_task_exec").run(sys.argv)
     sys.exit(exitcode)

@@ -11,14 +11,14 @@ def process_event(helper, *args, **kwargs):
     dropdown_list = helper.get_param("severity")
     state_message = helper.get_param("module")
     view_report = helper.get_param("severity")
+    command = helper.get_param("command")
     description = helper.get_param("description")
     parameters = helper.get_param("parameters")
-    node = helper.get_param("host")
+    node = helper.get_param("node")
     env = helper.get_param("environment")
     pe_token = helper.get_global_setting("puppet_enterprise_token")
     pe_server = helper.get_global_setting("puppet_enterprise_server")
     pe_port = helper.get_global_setting("port")
-    noop  = helper.get_param("noop")
     
     method = 'POST'
     api_request = 'application/json' 
@@ -30,31 +30,24 @@ def process_event(helper, *args, **kwargs):
        'Content-Type': api_request
        }
 
-    if noop == 1:
-        data = '{ "environment" : "%s", "task" : "%s" ,"description" : "%s" ,"params" :  {%s},"scope" : {"nodes" : ["%s"]}}, "noop" : "true"' % (env, state_message, description, parameters, node)
-        
-        print >> sys.stderr, "ERROR Server response: %s" % data
-    else:
-        data = '{ "environment" : "%s", "task" : "%s" ,"description" : "%s" ,"params" :  {%s},"scope" : {"nodes" : ["%s"]}}' % (env, state_message, description, parameters, node)
-    
-        print >> sys.stderr, "ERROR Server response: %s" % data
+    data = '{ "environment" : "%s", "task" : "exec" ,"description" : "%s" ,"params" : {"command" : "%s" },"scope" : {"nodes" : ["%s"]}}' % (env,description,command,node)
     
     response = requests.post(urlpe, headers=headers, data=data, verify=False)
     
     if victor_ops_token == "":
         
-        print >> sys.stderr, "No VictorOps Account Setup" 
+        print >> sys.stderr, "No VictorOps Account Setup"
         return
         
     else:
-        
+    
         url = "https://alert.victorops.com/integrations/generic/20131114/alert/" + victor_ops_token + ""
-            
+        
         
         data = dict(
             message_type=dropdown_list,
             monitoring_tool='Puppet Tasks',
-            state_message=state_message,
+            state_message=command,
             job_description=description,
             entity_id=alert_entity_id,
             view_report=data,
@@ -99,5 +92,5 @@ def process_event(helper, *args, **kwargs):
             print >> sys.stderr, "ERROR Server response: %s" % e.read()
             return False
          
-    
+        
         return 0
