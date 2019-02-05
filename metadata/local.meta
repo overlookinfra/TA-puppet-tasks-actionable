@@ -1,0 +1,11 @@
+[passwords/credential%3A__REST_CREDENTIAL__%23TA-puppet-tasks-actionable-alerts-for-splunk-action%23configs%2Fconf-ta_puppet_tasks_actionable_alerts_for_splunk_action_settings%3Aadditional_parameters%60%60splunk_cred_sep%60%601%3A]
+version = 7.1.2
+modtime = 1538281420.582172000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23TA-puppet-tasks-actionable-alerts-for-splunk-action%23configs%2Fconf-ta_puppet_tasks_actionable_alerts_for_splunk_action_settings%3Aadditional_parameters%60%60splunk_cred_sep%60%602%3A]
+version = 7.1.2
+modtime = 1538281420.635293000
+
+[ta_puppet_tasks_actionable_alerts_for_splunk_action_settings/additional_parameters]
+version = 7.1.2
+modtime = 1538281420.818439000
